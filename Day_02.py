@@ -1,6 +1,4 @@
 # Variable
-from traceback import print_tb
-from xml.dom.minidom import ProcessingInstruction
 
 Rent = 7300
 Light_bill = 500
