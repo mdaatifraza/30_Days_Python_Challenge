@@ -1,52 +1,55 @@
-from logging import exception
+# Inheritance
 
-# x = input("enter a value for x :")
-# y = input("enter a value for y :")
-# try:
-#     z = int(x)/int(y)
-# except Exception as e:    # General way  - for specific except ZeroDivisionError as e:
-#     print(f'exception occured: {e}')     #          - print("Division by zero exception")
-#     z = None
-# print(f'Division is : {z}')
+class vehicle:
+    def general_usage(self):
+        print("General use : Transportation" )
 
-#------------------------------------------------------------
+class car(vehicle):  # Inheritance of class
+    def __init__(self):
+        print(f'I am a car')
+        self.wheels = 4
+        self.has_roof = True
 
-# try:
-#     z = x/int(y)        # If forget to convert it into integer
-# except ZeroDivisionError as e:
-#     print(f'Division by zero exception')
-#     z = None
-# except Exception as e:
-#     print(f'Error type is : {type(e).__name__}')    # by the help of this we know the type of error
-#     z = None                                        # so that we can then handle it specifically as handle zerobydivison
-# print(f'Division is : {z}')
+    def specific_usage(self):
+        print(f'Specific use : commute to work, vacation with family.')
 
+class MotorCycle(vehicle):
+    def __init__(self):
+        print(f'I am a Motor Cycle')
+        self.wheels = 2
+        self.has_roof = False
 
-#------------------After knowing type of error handling specifically------------------------------
-# try:
-#     z = x/int(y)
-# except ZeroDivisionError as e:
-#     print(f'Division by zero exception')
-#     z = None
-# except TypeError as e:
-#     print(f'Type error exception')
-#     z = None
-# print(f'Division is : {z}')
-
-#-----------🎯 Challenge--------------
-#-------------- Read numbers from a file and handle errors gracefully--------------
-
-with open("./Day_07/MyData", "r") as f:
-    text = f.read()
-    word = text.split()
-    number = []
-    for w in word:
-        try:
-            n = float(w)
-            number.append(n)
-        except ValueError as e:
-            print(f'Value Error exception')
+    def specific_usage(self):
+        print(f'Specific use is : road trip and racing')
 
 
+class electric_car(car):
+    def __init__(self, make, model, battery):
+        self.make = make
+        self.model = model
+        self.battery = battery
 
-print(number)
+    def display(self):
+        print(f'The {self.make} {self.model} is an electric car with a battery capacity of {self.battery} kWh')
+
+
+c = car()
+c.general_usage()     # we can call the main class
+c.specific_usage()
+print("--------------------------------------------------------------")
+
+e_c = electric_car("Tesla", "Model 3", 75)
+e_c.display()
+e_c = electric_car("Nissan", "Leaf", 40 )
+e_c.display()
+e_c = electric_car("Hyundai", "Ioniq 5", 40.5 )
+e_c.display()
+
+print("------------------------------------------------------")
+M = MotorCycle()
+M.general_usage()
+M.specific_usage()
+
+#-----------------🎯 Challenge-----------------
+#------------------ Extend Car into an ElectricCar subclass with battery capacity-----------------
+
