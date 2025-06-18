@@ -24,6 +24,10 @@ if target_datetime < current_datetime:
 else:
     print(f'Target date has not passed')
 
+print("----------------------------------------------------------------------------")
+print(f'Days : {today.day}')
+print(f'month : {today.month}')
+print(f'year : {today.year}')
 #---------------🎯 Challenge---------------
 #---------------- Calculate the days between two dates---------------
 
