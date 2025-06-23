@@ -60,63 +60,65 @@ from collections import deque
 #--------------**********************---------------------
 # Queue (FIFO) - first in first out
 
-wmt_stock_price_queue = []
-wmt_stock_price_queue.insert(0, 131.10)
-wmt_stock_price_queue.insert(0, 132.12)
-wmt_stock_price_queue.insert(0, 135)
-print(wmt_stock_price_queue)
-print(wmt_stock_price_queue.pop())   # You will see first in first out here -> output will be 131.1
-print(wmt_stock_price_queue.pop())
-print(wmt_stock_price_queue.pop())
+# wmt_stock_price_queue = []
+# wmt_stock_price_queue.insert(0, 131.10)
+# wmt_stock_price_queue.insert(0, 132.12)
+# wmt_stock_price_queue.insert(0, 135)
+# print(wmt_stock_price_queue)
+# print(wmt_stock_price_queue.pop())   # You will see first in first out here -> output will be 131.1
+# print(wmt_stock_price_queue.pop())
+# print(wmt_stock_price_queue.pop())
+#
+# from collections import deque
+#
+# q = deque()
+#
+# q.appendleft(5)         # So in the stack we were using append here we will be using appendleft
+# q.appendleft(4)
+# q.appendleft(3)
+# q.appendleft(9)
+# q.appendleft(10)
+# print(q.pop())          # First in first out
+#
+# class Queue:
+#     def __init__(self):
+#         self.buffer = deque()
+#     def enqueue(self, val):
+#         self.buffer.appendleft(val)
+#     def dequeue(self):
+#         return  self.buffer.pop()
+#     def peak(self):
+#         return self.buffer[-1]
+#     def is_empty(self):
+#         return len(self.buffer)==0
+#     def size(self):
+#         return len(self.buffer)
+#
+# pq = Queue()
+# pq.enqueue(
+#     {
+#         'Company':'Wal Mark',
+#         'timestamp': '15 apr, 11.01 AM',
+#         'Price': 131.10
+#     }
+# )
+# pq.enqueue(
+#     {
+#         'Company':'Wal Mark',
+#         'timestamp': '15 apr, 11.02 AM',
+#         'Price': 132
+#     }
+# )
+# pq.enqueue(
+#     {
+#         'Company':'Wal Mark',
+#         'timestamp': '15 apr, 11.03 AM',
+#         'Price': 135
+#     }
+# )
+#
+# print(f'Size of the Queue : {pq.size()}')
+# print(pq.buffer)
+# print(pq.dequeue())
 
-from collections import deque
 
-q = deque()
-
-q.appendleft(5)         # So in the stack we were using append here we will be using appendleft
-q.appendleft(4)
-q.appendleft(3)
-q.appendleft(9)
-q.appendleft(10)
-print(q.pop())          # First in first out
-
-class Queue:
-    def __init__(self):
-        self.buffer = deque()
-    def enqueue(self, val):
-        self.buffer.appendleft(val)
-    def dequeue(self):
-        return  self.buffer.pop()
-    def peak(self):
-        return self.buffer[-1]
-    def is_empty(self):
-        return len(self.buffer)==0
-    def size(self):
-        return len(self.buffer)
-
-pq = Queue()
-pq.enqueue(
-    {
-        'Company':'Wal Mark',
-        'timestamp': '15 apr, 11.01 AM',
-        'Price': 131.10
-    }
-)
-pq.enqueue(
-    {
-        'Company':'Wal Mark',
-        'timestamp': '15 apr, 11.02 AM',
-        'Price': 132
-    }
-)
-pq.enqueue(
-    {
-        'Company':'Wal Mark',
-        'timestamp': '15 apr, 11.03 AM',
-        'Price': 135
-    }
-)
-
-print(f'Size of the Queue : {pq.size()}')
-print(pq.buffer)
-print(pq.dequeue())
