@@ -117,6 +117,6 @@ pq.enqueue(
     }
 )
 
-print(pq.size())
+print(f'Size of the Queue : {pq.size()}')
 print(pq.buffer)
 print(pq.dequeue())
